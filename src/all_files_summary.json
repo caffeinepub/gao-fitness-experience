@@ -1,0 +1,17 @@
+{
+  "backend/main.mo": "Motoko canister storing posts in a map with create, fetch (single/all), and delete operations using traps for missing or duplicate entries.",
+  "feature_evidence.json": "Feature evidence report mapping features to affected frontend files, components, and tests with metadata.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing the purpose of key frontend components, hooks, styles, and Tailwind config.",
+  "frontend/index.css": "Tailwind base layer defining a neutral OKLCH variable palette for light and dark modes plus global background and text bindings.",
+  "frontend/index.html": "HTML entry point defining the root element and loading the main React bundle.",
+  "frontend/src/App.tsx": "Root React component setting up QueryClient and theme handling, then rendering site layout and PostFeed within a branded header.",
+  "frontend/src/components/PostFeed.tsx": "Component fetching and rendering posts with loading, error, empty states, and styled Card-based post display.",
+  "frontend/src/components/SiteLayout.tsx": "Page layout wrapper adding a footer with brand copyright, attribution, and a separator.",
+  "frontend/src/hooks/useActor.ts": "React Query hook creating and caching an authenticated or anonymous backend actor and invalidating dependent queries on identity change.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and provider managing DFINITY Internet Identity login, stored identity loading, and status tracking.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook fetching posts from the backend actor via getPosts.",
+  "frontend/src/index.css": "Global Tailwind styles defining warm earth‑tone color variables, typography, and light/dark mode adjustments for the blog theme.",
+  "frontend/src/main.tsx": "Application entry point rendering App inside InternetIdentityProvider and QueryClientProvider.",
+  "frontend/tailwind.config.js": "Configures Tailwind with dark mode, custom OKLCH color system, extended theme settings, animations, and typography/container/animation plugins.",
+  "project_state.json": "Defines current project state for the 'Gao Fitness Experience' blog, including features, new requests, and architectural notes for frontend and backend work."
+}

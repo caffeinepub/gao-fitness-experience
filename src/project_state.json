@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a minimalist modern blog website named “Gao Fitness Experience” for publishing fitness experience posts via a backend endpoint that accepts a title and content, with a footer stating all rights reserved to the brand/website name.",
+  "architectural_notes": [
+    "No images are needed/required for the blog."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-minimalist-modern-appealing-blog-frontend-branded-as-gao-fitness-experience-that-displays-the-list-of-posts-title-date-content-and-updates-when-new-posts-are-created",
+      "title": "Create a minimalist, modern, appealing blog frontend branded as “Gao Fitness Experience” that displays the list of posts (title, date, content) and updates when new posts are created.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-site-wide-footer-that-includes-an-english-all-rights-reserved-notice-using-the-website-name-as-the-brand-gao-fitness-experience",
+      "title": "Add a site-wide footer that includes an English “All rights reserved” notice using the website name as the brand: “Gao Fitness Experience”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-define-and-apply-a-consistent-minimalist-visual-theme-colors-typography-spacing-and-layout-across-the-entire-ui-with-a-modern-editorial-feel-avoid-blue-purple-as-primary-colors",
+      "title": "Define and apply a consistent minimalist visual theme (colors, typography, spacing, and layout) across the entire UI with a modern editorial feel; avoid blue/purple as primary colors.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create minimalist modern blog website UI for “Gao Fitness Experience” (no images needed).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement backend endpoint to create blog posts requiring title and content.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add site footer with “All rights reserved” to the brand/website name (“Gao Fitness Experience”).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement backend data model and endpoints for blog posts so posts can be created via an endpoint that requires a title and content, and posts can be fetched for display on the site.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Gao Fitness Experience",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

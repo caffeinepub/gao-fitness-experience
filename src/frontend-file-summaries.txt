@@ -1,0 +1,8 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up QueryClient and ThemeProvider, renders the site header with \"Gao Fitness Experience\" branding and the PostFeed component within SiteLayout.",
+  "frontend/src/components/SiteLayout.tsx": "Layout wrapper component that provides consistent page structure with a footer containing the brand name \"Gao Fitness Experience\", all rights reserved notice, and caffeine.ai attribution with a heart icon.",
+  "frontend/src/components/PostFeed.tsx": "Presentational component that fetches and displays blog posts in Card components with loading, error, and empty states; shows post title and content with proper typography and spacing.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook that fetches the list of blog posts from the backend actor using the getPosts query endpoint.",
+  "frontend/src/index.css": "Global styles defining a warm earth-tone color palette (terracotta/rust primary, sand secondary, amber accent) in OKLCH format for both light and dark modes, with typography settings for a minimalist editorial aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with the custom OKLCH color system and typography settings to support the minimalist fitness blog design."
+}

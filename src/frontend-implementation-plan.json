@@ -1,0 +1,95 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Gao Fitness Experience minimalist fitness blog (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-2",
+      "summary": "Build a minimalist modern blog UI branded “Gao Fitness Experience” that fetches and renders posts and refreshes as new posts are created.",
+      "acceptanceCriteria": [
+        "The site header/hero prominently displays the site name “Gao Fitness Experience”.",
+        "The homepage renders a list of blog posts fetched from the backend, showing at minimum title and content (and created date if available).",
+        "Empty-state is handled gracefully when there are no posts (English text).",
+        "All user-facing text is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the main app view that renders a single-page homepage (no extra routes) with: a hero/header showing “Gao Fitness Experience”, the posts feed, and a site-wide footer via a shared layout component. Wire in the posts query so the list updates when refetched. Use shadcn-ui composed components (e.g., Card/Separator/Typography wrappers) for a clean editorial layout. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/usePosts.ts",
+          "operation": "create",
+          "description": "Add a React Query hook that fetches the post list from the backend (using the typed backend interface) and exposes loading/empty/error states plus a refetch mechanism for UI updates."
+        },
+        {
+          "path": "frontend/src/lib/backendClient.ts",
+          "operation": "create",
+          "description": "Implement a small typed backend client wrapper that uses the existing core-infrastructure backend connection configuration to call backend methods (e.g., getPosts). Keep it anonymous by default (no auth flow) and compatible with React Query consumers."
+        },
+        {
+          "path": "frontend/src/components/PostFeed.tsx",
+          "operation": "create",
+          "description": "Create a presentational component that renders the posts list (title + content, and date only if available) and shows an English empty state when there are no posts. Use shadcn-ui composed components for post cards and spacing. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the app imports and renders the newly created App component correctly and that React Query provider setup supports refetching to reflect newly created posts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add a site-wide footer with an English “All rights reserved” notice including the brand name “Gao Fitness Experience”.",
+      "acceptanceCriteria": [
+        "Footer is visible on all pages/views.",
+        "Footer text includes the exact brand name “Gao Fitness Experience” and an “All rights reserved” notice in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout component that wraps the page content and includes a footer with the exact brand name “Gao Fitness Experience” and an English “All rights reserved” notice. Use shadcn-ui composed primitives (e.g., Separator) for a minimalist divider. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the homepage content with SiteLayout so the footer is consistently visible across the rendered view(s)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a consistent minimalist editorial theme (non-blue/purple primary) across header, post list, and footer with responsive typography and spacing.",
+      "acceptanceCriteria": [
+        "A coherent theme is applied consistently across header, post list, and footer.",
+        "Primary palette is not blue/purple (unless used only as minor accents).",
+        "Typography and spacing are consistent and readable on mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global theme tokens and base typography/spacing for a minimalist editorial feel using a neutral/earth-tone primary palette (avoid blue/purple as primary). Apply consistent defaults for body background, text, headings, and link styles."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions (if needed) to support the chosen non-blue/purple primary palette and consistent typographic scale/spacing utilities used by the layout, header, post feed, and footer."
+        },
+        {
+          "path": "frontend/src/components/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Apply consistent responsive container width, padding, and typographic hierarchy so header/hero, content, and footer align visually and read well on mobile and desktop. Use shadcn-ui composed components where helpful. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/PostFeed.tsx",
+          "operation": "modify",
+          "description": "Align post card typography, spacing, and separators with the global theme for a consistent modern editorial look. Use shadcn-ui composed components where helpful. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

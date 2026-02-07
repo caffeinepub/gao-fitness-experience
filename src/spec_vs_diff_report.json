@@ -1,0 +1,76 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T13:47:34.116Z",
+  "summary": "Frontend implements a branded minimalist post list with header and footer, and a warm earth-tone theme. Backend adds basic post creation and retrieval, but the backend data model, validation, ordering, and upgrade persistence required by REQ-1 are not implemented. Several unrequested features (delete endpoint, auth plumbing, extra footer attribution) were added.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Persistent BlogPost type with at least id, title, content, createdAt; create endpoint rejects empty title/content; list endpoint returns newest-first; posts survive canister upgrades via stable storage.",
+      "reason": "Backend Post type lacks id and createdAt; create endpoint does not reject empty strings; getPosts returns map values without sorting; storage is an in-memory Map with no stable variables or preupgrade/postupgrade hooks, so it will not persist across upgrades.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Homepage renders posts showing title and content (and created date if available) and updates when new posts are created.",
+      "reason": "Frontend PostFeed renders title and content only (no date). Also, there is no mechanism shown to refresh the list when new posts are created (refetchOnWindowFocus is disabled, and no polling/invalidation tied to post creation is present).",
+      "evidence": [
+        "frontend/src/components/PostFeed.tsx",
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Backend delete endpoint for posts.",
+      "reason": "BuildRequest does not request a delete endpoint (only create and list).",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Backend getPost(title) endpoint (fetch single post by title).",
+      "reason": "BuildRequest only requires a query endpoint to list posts for the frontend; single-post fetch by title is not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Internet Identity authentication/provider hooks and actor creation logic tied to identity.",
+      "reason": "BuildRequest explicitly says 'do not add auth unless explicitly requested'; adding II login framework is extra and not required to meet the blog display/create endpoint requirements.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Footer attribution/link to caffeine.ai and heart icon.",
+      "reason": "REQ-3 only asks for brand name plus an 'All rights reserved' notice; the additional attribution content is not requested.",
+      "evidence": [
+        "frontend/src/components/SiteLayout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/PostFeed.tsx",
+    "frontend/src/components/SiteLayout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

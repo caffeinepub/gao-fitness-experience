@@ -1,0 +1,95 @@
+{
+  "kind": "build_request",
+  "title": "Minimalist fitness blog with post-creation endpoint for “Gao Fitness Experience”",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement backend data model and endpoints for blog posts so posts can be created via an endpoint that requires a title and content, and posts can be fetched for display on the site.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The way to create a post is thorough a endpoint you are going to create, it requires an title and content."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A persistent BlogPost type exists with at least: id, title, content, createdAt.",
+        "There is an update endpoint to create a post that rejects empty title or empty content.",
+        "There is a query endpoint to list posts for the frontend (newest-first).",
+        "Created posts remain available after canister upgrades (stable storage)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a minimalist, modern, appealing blog frontend branded as “Gao Fitness Experience” that displays the list of posts (title, date, content) and updates when new posts are created.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "I want to create an blog website where I can post my fitness experience.",
+          "The blog should be minimalist and appealing with modern design. The name of the website is “Gao Fitness Experience” ."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The site header/hero prominently displays the site name “Gao Fitness Experience”.",
+        "The homepage renders a list of blog posts fetched from the backend, showing at minimum title and content (and created date if available).",
+        "Empty-state is handled gracefully when there are no posts (English text).",
+        "All user-facing text is in English."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a site-wide footer that includes an English “All rights reserved” notice using the website name as the brand: “Gao Fitness Experience”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The footer should have all right reserved to my brand which is the website name."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer is visible on all pages/views.",
+        "Footer text includes the exact brand name “Gao Fitness Experience” and an “All rights reserved” notice in English."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Define and apply a consistent minimalist visual theme (colors, typography, spacing, and layout) across the entire UI with a modern editorial feel; avoid blue/purple as primary colors.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The blog should be minimalist and appealing with modern design."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A coherent theme is applied consistently across header, post list, and footer.",
+        "Primary palette is not blue/purple (unless used only as minor accents).",
+        "Typography and spacing are consistent and readable on mobile and desktop."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo.",
+    "Do not edit frontend files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT; compose them instead if needed.",
+    "No third-party authentication integrations; only Internet Identity is supported (do not add auth unless explicitly requested)."
+  ],
+  "nonGoals": [
+    "Image uploads or image generation for posts.",
+    "Admin UI for creating posts (post creation is via backend endpoint as requested).",
+    "Comments, likes, tags, categories, search, or rich-text editor unless explicitly requested."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

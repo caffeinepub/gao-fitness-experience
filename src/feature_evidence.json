@@ -1,0 +1,65 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-minimalist-modern-appealing-blog-frontend-branded-as-gao-fitness-experience-that-displays-the-list-of-posts-title-date-content-and-updates-when-new-posts-are-created",
+      "featureTitle": "Create a minimalist, modern, appealing blog frontend branded as “Gao Fitness Experience” that displays the list of posts (title, date, content) and updates when new posts are created.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/PostFeed.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-site-wide-footer-that-includes-an-english-all-rights-reserved-notice-using-the-website-name-as-the-brand-gao-fitness-experience",
+      "featureTitle": "Add a site-wide footer that includes an English “All rights reserved” notice using the website name as the brand: “Gao Fitness Experience”.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SiteLayout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-define-and-apply-a-consistent-minimalist-visual-theme-colors-typography-spacing-and-layout-across-the-entire-ui-with-a-modern-editorial-feel-avoid-blue-purple-as-primary-colors",
+      "featureTitle": "Define and apply a consistent minimalist visual theme (colors, typography, spacing, and layout) across the entire UI with a modern editorial feel; avoid blue/purple as primary colors.",
+      "files": [
+        "frontend/src/components/PostFeed.tsx",
+        "frontend/src/components/SiteLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
